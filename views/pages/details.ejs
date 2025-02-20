@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("../partials/header") %>
+  </head>
+  <body class="bg-blue-200 flex flex-col justify-center items-center min-h-screen">
+    <div class="bg-black-100 border-4 border-black-300 rounded-lg shadow-lg p-5 max-w-sm text-center relative">
+      <div class="flex justify-between items-center border-b-2 border-gray-300 pb-2">
+        <h1 class="text-2xl font-bold uppercase text-gray-800">
+          <%= pokemon.name %>
+        </h1>
+        <div class="bg-red-500 text-white text-sm px-3 py-1 rounded-full">
+          HP 60
+        </div>
+      </div>
+      
+      <div class="flex justify-center my-4">
+        <img
+          src="<%= pokemon.sprites.front_default %>"
+          alt="<%= pokemon.name %>"
+          class="w-40 h-40 bg-white border-2 border-gray-300 rounded-lg shadow-md"
+        />
+      </div>
+      
+      <div class="bg-white p-3 rounded-lg shadow-md border-2 border-gray-300">
+        <p class="text-lg font-semibold text-gray-700">Height: <%= pokemon.height %></p>
+        <p class="text-lg font-semibold text-gray-700">Weight: <%= pokemon.weight %></p>
+        <p class="text-lg font-semibold text-gray-700">
+          Type: <%= pokemon.types.map(t => t.type.name).join(', ') %>
+        </p>
+      </div>
+      
+      <div class="text-center mt-5">
+        <a href="/" class="px-4 py-2 bg-red-500 text-white rounded-lg shadow-md hover:bg-red-600 transition">Back</a>
+      </div>
+    </div>
+    
+    <div class="text-center mt-5 text-gray-600 text-sm">
+      &copy; 2025 Pokémon. All rights reserved.
+    </div>
+    
+    <%- include("../partials/footer") %>
+  </body>
+</html>
